@@ -1,0 +1,93 @@
+<html >
+<head>
+	<title>Super Awesome Food Time</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src='//maps.googleapis.com/maps/api/js?key=AIzaSyChBLxe-W3zitvaraGBp33M5naEiEH2qFk&sensor=false'></script>
+    <style>
+        .angular-google-map-container {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+    <!-- These files are installed automatically using grunt-bower-install from bower_components folder -->
+    <!--bower:css-->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!--endBower-->
+    <!--bower:js-->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-local-storage/angular-local-storage.js"></script>
+    <script src="bower_components/angularjs-geolocation/src/geolocation.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-scrollto/angular-scrollto.js"></script>
+    <script src="bower_components/angular-scroll/angular-scroll.min.js"></script>
+    <!--endBower-->
+    <!-- Automatically added by grunt-injector-->
+    <!-- injector:js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers/app.js"></script>
+    <script src="js/controllers/search.js"></script>
+    <script src="js/controllers/signup.js"></script>
+    <script src="js/controllers/user.js"></script>
+    <script src="js/services/fourSquareServices.js"></script>
+    <script src="js/services/ipLocateService.js"></script>
+    <script src="js/services/mapServices.js"></script>
+    <script src="js/services/pageServices.js"></script>
+    <script src="js/services/userServices.js"></script>
+    <script src="js/services/yelpServices.js"></script>
+    <!-- endinjector -->
+    <style>
+        body {
+            padding-top: 70px;
+        }
+    </style>
+</head>
+<body class="container-fluid" ng-app="restaurantSearch">
+	<div class="row" ng-controller="AppCtrl">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Hungry?</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li ng-show="true"><a href="#/login">Login</a></li>
+                        <li ng-show="true"><a href="#/signup" >Sign up</a></li>
+                    </ul>
+                    <form class="navbar-form navbar-left">
+                        <div class="form-group">
+                            <label for="seachBox"></label>
+                            <input id="seachBox" type="text" class="form-control" placeholder="I am hungry for..."
+                                   ng-model="search.query" required>
+                            <label for="nearBox"></label>
+                            <input id="nearBox" type="text" class="form-control" placeholder="near..."
+                                   ng-model="thisPlace" ng-change="thisPlaceChanged(thisPlace)" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="getLocation"></label>
+                            <button type="submit" class="btn" ng-click="handleSearch(search.query, thisPlace)">Submit</button>
+                            <button id="getLocation" class="btn" ng-click="getLocal()" ng-show="true" >Get your location</button>
+                        </div>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right" ng-hide="">
+                        <li ng-click="logout()"><a href="#">Logout</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+		<div class="col-xs-12" ng-view></div>
+	</div>
+</body>
+</html>
