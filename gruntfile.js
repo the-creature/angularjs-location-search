@@ -6,7 +6,6 @@ var LIVERELOAD_PORT = 35729,
       return connect.static(require('path').resolve(dir));
     };
 module.exports = function(grunt) {
-
   /**
    * Loads grunt tasks based on dependencies
    */
@@ -25,7 +24,8 @@ module.exports = function(grunt) {
         files: [
           'public/templates/*.html',
           'public/index.html',
-          'public/js/**/*.js'
+          'public/js/**/*.js',
+          'public/css/style.css'
         ]
       }
     },
@@ -91,7 +91,7 @@ module.exports = function(grunt) {
       }
     }
   });
-
+  // register  a custom task for grunt.
   grunt.registerTask('preview', function () {
     grunt.task.run([
       'bowerInstall',

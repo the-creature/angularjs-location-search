@@ -1,0 +1,60 @@
+body {
+    padding-top: 70px;
+}
+#restaurant .navbar-inverse,
+#restaurant .navbar-collapse{
+	background-color: #0732a2;
+}
+#restaurant .navbar-inverse .navbar-brand{
+	color: #fff;
+	font-weight: bold;
+}
+#restaurant button.logout{
+	margin: 10px 6px 10px;
+}
+#restaurant .input-lg{
+	font-size: 16px;
+	height: 43px;
+}
+#restaurant button.searchBtn{
+	background-color: #0732a2;
+	color: #fff;
+}
+#restaurant .margin-top{
+	margin-top: -11px;
+}
+#restaurant .padding0{
+	padding: 0px;
+}
+#restaurant button.searchBtn:hover{
+	color: #ccc;
+}
+#restaurant .search-results .list-group-item{
+	cursor: pointer;
+}
+#restaurant .col-xs-12.padding20{
+	padding-left: 20px;
+}
+#restaurant .list-group h4{
+	color: #2d5be3;
+}
+#restaurant .list-group .bg-primary h4{
+	color: #fff;
+}
+#restaurant .search-results .pager,
+#restaurant .col-xs-12.padding15{
+	padding: 15px;
+}
+#restaurant .search-results .list-group-item:hover{
+	background-color: #f4f9fc;
+}
+.angular-google-map-container {
+        height: 600px;
+        width: 100%;
+}
+ .affix {
+    width: 100%;
+}
+.fixAffixHeight {
+    height: 100%;
+}
